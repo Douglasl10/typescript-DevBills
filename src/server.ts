@@ -4,7 +4,7 @@ import initializeFirebaseAdmin from "./config/firebase";
 import { prismaConnect } from "./config/prisma";
 import { initializeGlobalCategories } from "./services/globalCategories.service";
 
-const PORT = env.PORT;
+const PORT = env.PORT || 3000;
 
 initializeFirebaseAdmin();
 
