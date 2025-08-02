@@ -4,7 +4,7 @@ import initializeFirebaseAdmin from "./config/firebase";
 import { prismaConnect } from "./config/prisma";
 import { initializeGlobalCategories } from "./services/globalCategories.service";
 
-const PORT = env.PORT || 3000;
+const PORT = process.env.PORT || env.PORT || 3000;
 
 initializeFirebaseAdmin();
 
@@ -14,9 +14,9 @@ const startServer = async () => {
 
 		await initializeGlobalCategories();
 
-		await app.listen({ port: PORT }).then(() => {
-			console.log(`Server is running on port ${PORT}`);
-		});
+		  await app.listen({ port: Number(PORT) });
+
+    console.log(`🚀 Server is running on port ${PORT}`);
 	} catch (error) {
 		console.error("Error starting the server:", error);
 	}
