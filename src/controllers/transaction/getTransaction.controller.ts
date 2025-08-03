@@ -59,7 +59,6 @@ export const getTransactions = async (
 				},
 			},
 		});
-		console.log("transactions", transactions);
 		reply.send(transactions);
 	} catch (err) {
 		request.log.error("error in getTransactions", err);
