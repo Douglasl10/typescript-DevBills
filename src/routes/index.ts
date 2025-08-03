@@ -11,7 +11,7 @@ async function routes(fastify: FastifyInstance): Promise<void> {
 	});
 
 	fastify.register(categoryRoutes, { prefix: "/categories" });
-	fastify.register(transactionRoutes);
+	fastify.register(transactionRoutes, { prefix: "/transactions" });
 }
 
 export default routes;
