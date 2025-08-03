@@ -11,7 +11,7 @@ const app: FastifyInstance = fastify({
 });
 
 app.register(cors, {
-	origin: "https://devbillsfinancas.netlify.app",
+	origin: ["https://devbillsfinancas.netlify.app", "http://localhost:5173"],
 	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 	allowedHeaders: ["Authorization", "Content-Type"],
 });
